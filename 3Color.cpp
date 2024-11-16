@@ -2,6 +2,7 @@
 #include <ctime>
 #include "Windows.h"
 using namespace std;
+
 HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 char lamps[12];
 int max_size = 12;
@@ -57,7 +58,6 @@ void display() {
         cout << "\n\t   9     7     5\n\t      8     6\n\t   ";
         show(9); cout << "  "; show(7); cout << "  "; show(6); cout << "\n\n";
     }
-    
 }
 
 bool gameover() {
@@ -111,15 +111,13 @@ void start() {
         min = 0; max = 9;
     } else {
         min = 1; max = 6;
-    }
-    while (!gameover()) {
+    } while (!gameover()) {
         display();
         cin >> input;
         if ((min <= input) && (input <= max))
             press_button(input);
         display();
-    }
-    display();
+    } display();
 }
 
 int main() {
