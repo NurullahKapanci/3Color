@@ -123,8 +123,9 @@ void start() {
 }
 
 int main() {
-    set_game_type();
-    create();
-    start();
-    return main();
+    while (true) {
+        set_game_type();
+        create();
+        start();
+    } return 0;
 }
